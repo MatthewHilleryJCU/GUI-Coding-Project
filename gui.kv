@@ -1,0 +1,67 @@
+BoxLayout:
+    orientation: 'vertical'
+    BoxLayout:
+        size_hint_y: 0.3
+        orientation: 'horizontal'
+        Label:
+            canvas.before:
+                Color:
+                    rgba: 1, 1, 1, 1
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
+            id: current_location
+            font_size: 30
+            color: 0, 0, 0, 1
+    BoxLayout:
+        size_hint_y: 0.1
+        orientation: 'horizontal'
+        Spinner:
+            id: select_country
+            font_size: 20
+            on_text: app.change_state(self.text)
+        TextInput:
+            id: foreign_amount
+            on_text_validate: app.convert_foreign_to_home()
+            font_size: 20
+    BoxLayout:
+        size_hint_y: 0.1
+        orientation: 'horizontal'
+        Label:
+            canvas.before:
+                Color:
+                    rgba: 0, 0, 0, 0.5
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
+            id: home_country
+            font_size: 20
+        TextInput:
+            id: home_amount
+            on_text_validate: app.convert_home_to_foreign()
+            font_size: 20
+    BoxLayout:
+        size_hint_y: 0.2
+        orientation: 'horizontal'
+        Label:
+            canvas.before:
+                Color:
+                    rgba: 1, 1, 1, 1
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
+            id: date_today
+            font_size: 25
+            color: 0, 0, 0, 1
+    BoxLayout:
+        size_hint_y: 0.05
+        orientation: 'horizontal'
+        Label:
+            id: status
+        Button:
+            id: convert
+            text: 'Update Currency'
+            on_press: app.button_pressed()
+
+
+
