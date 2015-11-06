@@ -10,8 +10,6 @@ from kivy.uix.textinput import TextInput
 
 __author__ = 'jc299940'
 
-home_amount = TextInput.multiline = False
-foreign_amount = TextInput.multiline = False
 
 
 class CurrencyConverterApp(App):
