@@ -73,7 +73,7 @@ class CurrencyConverterApp(App):
             self.root.ids.convert.disabled = True
             self.root.ids.select_country.disabled = True
 
-        # create no-value dictionary
+        # create no-value dictionary.
         self.trip_locations_dict = dict.fromkeys(trip_countries)
         self.root.ids.select_country.values = self.trip_locations_dict
 
